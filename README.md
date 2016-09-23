@@ -3,17 +3,17 @@ ofxKramerMatrixControl
 
 Basic interface to control a Kramer matrix. 
 
-It uses Protocol 3000 over a Ethernet.
+It uses Protocol 3000 over Ethernet.
 
 #XML Tags
 
-<Settings> The root element
+Settings - The root element
 
-<port> - The communication port that will be used
+port - The communication port that will be used
 
-<kramerIP> - The ip that is assigned to the Kramer matrix
+kramerIP - The ip that is assigned to the Kramer matrix
 
-<commandString> - All the required commands can be set here
+commandString - All the required commands can be set here
 
 #Versions
 
