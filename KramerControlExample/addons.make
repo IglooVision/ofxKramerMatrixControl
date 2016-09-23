@@ -1,0 +1,3 @@
+ofxKramerMatrixControl
+ofxOsc
+ofxXmlSettings

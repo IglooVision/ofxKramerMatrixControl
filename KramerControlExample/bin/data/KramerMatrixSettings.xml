@@ -1,0 +1,12 @@
+<Settings>
+	<port>5000</port>
+	<kramerIP>192.168.15.167</kramerIP>
+	<commands>
+		<command>
+			<commandString>#PRST-RCL 2</commandString>
+		</command>
+		<command>
+			<commandString>#PRST-VID?</commandString>
+		</command>
+	</commands>
+</Settings>
