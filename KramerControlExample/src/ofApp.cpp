@@ -5,9 +5,7 @@ void ofApp::setup()
 {
 	ofLogToFile("logFile.txt", true);
 
-	kramerControl.loadXmlSettings("KramerMatrixSettings.xml");
-
-	kramerControl.setupKramerConnection();
+	kramerControl.setupKramerConnection("KramerMatrixSettings.xml");
 
 }
 

@@ -20,11 +20,13 @@ ofxKramerMatrixControl::~ofxKramerMatrixControl()
 }
 
 //--------------------------------------------------------------
-void ofxKramerMatrixControl::setupKramerConnection()
+void ofxKramerMatrixControl::setupKramerConnection(string path)
 {
 	cout << "KRAMER CONTROL: setupKramerConnection" << endl;
 
 	cout << "KRAMER CONTROL: connecting to " << kramerIP << endl;
+
+	loadXmlSettings(path);
 
 	bool connected = kramerConnection.setup(kramerIP, port);
 

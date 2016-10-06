@@ -16,10 +16,7 @@ public:
 
 	//Sets up the connections by directly connecting to the Kramer matrix
 	//It uses a direct Ethernet connection with the Kramer matrix
-	void setupKramerConnection();
-
-	//Loads the XML settings from KramerMatrixSettings.xml
-	void loadXmlSettings(string path);
+	void setupKramerConnection(string path);
 
 	//A function to switch between different commands set in the XML file
 	void sendCommand(int commmandIndex);
@@ -29,9 +26,6 @@ public:
 
 private:
 
-
-
-
 	ofxXmlSettings			xml;
 	ofxTCPClient			kramerConnection;
 	int						port;
@@ -39,5 +33,8 @@ private:
 	string					kramerIP;
 
 	vector<string>			krammerCommands;
+
+	//Loads the XML settings from KramerMatrixSettings.xml
+	void loadXmlSettings(string path);
 
 };
