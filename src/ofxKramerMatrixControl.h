@@ -24,6 +24,9 @@ public:
 	//A function to switch between presets in the Kramer Matrix
 	void sendSwitchPresetCommand(int presetIndex);
 
+	//This functions has some hardcoded preset hexadecimal commands
+	void sendPresetHexadecimalCommands(int presetHexIndex);
+
 private:
 
 	ofxXmlSettings			xml;

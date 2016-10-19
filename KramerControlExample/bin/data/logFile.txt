@@ -8,3 +8,13 @@
 [ error ] ofxTCPClient: setup(): couldn't connect to 192.168.15.167 5000
 [notice ] Kramer couldn't connect
 
+
+
+--------------------------------------- 2016-10-06-11-21-27-374
+[notice ] Loading KramerMatrixSettings.xml
+
+[notice ] Port: 5000
+
+[ error ] ofxTCPClient: setup(): couldn't connect to 192.168.15.167 5000
+[notice ] Kramer couldn't connect
+

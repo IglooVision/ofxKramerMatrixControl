@@ -48,9 +48,15 @@ void ofxKramerMatrixControl::sendSwitchPresetCommand(int commandIndex)
 
 	string command = "#PRST-RCL " + ofToString(commandIndex) + "\r\n";
 
-	if (kramerConnection.isConnected())
-	{
-		send = kramerConnection.sendRaw(command);
+	const char toSend[4] = {0x04,0x81,0x80,0x81};
+
+	connected = kramerConnection.isConnected();
+
+	if (connected)
+	{		
+	//	send = kramerConnection.sendRaw(command);
+	//  send = kramerConnection.sendRaw("#PRST-RCL 2\r\n");
+		send = kramerConnection.sendRawBytes(toSend,4);
 	}
 	else
 	{
@@ -59,6 +65,61 @@ void ofxKramerMatrixControl::sendSwitchPresetCommand(int commandIndex)
 		send = kramerConnection.sendRaw(command);
 	}
 
+
+	if (!connected)
+	{
+		logEverywhere("Couldn't connect to Kramer matrix");
+	}
+	if (!send)
+	{
+		logEverywhere("Couldn't send commands to Kramer matrix");
+	}
+
+}
+
+//--------------------------------------------------------------
+//TODO: Find an alternative for the hardcoded commands
+//--------------------------------------------------------------
+void ofxKramerMatrixControl::sendPresetHexadecimalCommands(int presetHexIndex)
+{
+	bool connected = false;
+	bool send = false;
+
+	connected = kramerConnection.isConnected();
+
+	const char toSendPresetOne[4] = { 0x04,0x81,0x80,0x81 };
+	const char toSendPresetTwo[4] = { 0x04,0x82,0x80,0x81 };
+	
+	switch (presetHexIndex)
+	{
+		case 1:
+			 
+			if (connected)
+			{
+				send = kramerConnection.sendRawBytes(toSendPresetOne, 4);
+			}
+			else
+			{
+				connected = kramerConnection.setup(kramerIP, port);
+
+				send = kramerConnection.sendRawBytes(toSendPresetOne, 4);
+			}
+			break;
+		case 2:
+			
+			if (connected)
+			{
+				send = kramerConnection.sendRawBytes(toSendPresetTwo, 4);
+			}
+			else
+			{
+				connected = kramerConnection.setup(kramerIP, port);
+
+				send = kramerConnection.sendRawBytes(toSendPresetTwo, 4);
+			}
+			break;
+
+	}
 
 	if (!connected)
 	{
