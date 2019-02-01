@@ -1,11 +1,10 @@
-ofxKramerMatrixControl
-============
+# ofxKramerMatrixControl
 
 Basic interface to control a Kramer matrix. 
 
 It uses Protocol 3000 over Ethernet.
 
-#XML Tags
+### XML Tags
 
 Settings - The root element
 
@@ -15,15 +14,15 @@ kramerIP - The ip that is assigned to the Kramer matrix
 
 commandString - All the required commands can be set here
 
-#Versions
+### Versions
 
 1.0 Simple interface to control a Kramer matrix
 
-#Author
+### Author
 
 Igloovision
 
-#Dependencies
+### Dependencies
 
 ofxNetwork
 ofxXmlSettings
